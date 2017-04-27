@@ -48,11 +48,7 @@
         <property name="basePackage" value="com.fanyank.mapper"/>
     </bean>
 
-    <!--<bean id="UserController" class="com.fanyank.controller.UserController"/>-->
-    <!---->
-    <!--<bean id="UserService" class="com.fanyank.service.UserService">-->
-        <!--<property name="userMapper" ref="UserController"/>-->
-    <!--</bean>-->
+
 
 
 </beans>

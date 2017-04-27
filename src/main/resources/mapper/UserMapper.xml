@@ -4,4 +4,24 @@
     <select id="findById" parameterType="int" resultType="com.fanyank.pojo.User">
         select * from t_user where id = #{id}
     </select>
+
+    <insert id="saveUser" parameterType="com.fanyank.pojo.User" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user(username,password,gender) values(#{username},#{password},#{gender})
+    </insert>
+
+    <select id="findAllUser" resultType="com.fanyank.pojo.User">
+        select * from t_user
+    </select>
+
+    <select id="findAllUserCount" resultType="int">
+        select COUNT(*) from t_user;
+    </select>
+
+    <update id="updateUser" parameterType="com.fanyank.pojo.User">
+        update t_user set password = #{password},gender = ${gender} where id = #{id}
+    </update>
+
+    <select id="serarchByUsername" parameterType="string" resultType="com.fanyank.pojo.User">
+        select * from t_user where username like CONCAT('%',#{username},'%')
+    </select>
 </mapper>
