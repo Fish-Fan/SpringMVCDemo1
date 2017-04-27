@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by yanfeng-mac on 2017/4/25.
  */
-
+@Component
 public interface UserMapper {
 //    @Select(value = "select * from t_user where id = #{id}")
     public User findById(Integer id);
