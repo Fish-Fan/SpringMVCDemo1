@@ -29,15 +29,30 @@ public class ApiController {
         System.out.println("username->" + username);
         System.out.println("password->" + password);
         User user = userService.findByUsername(username);
-//        Map<String, Object> result = Maps.newHashMap();
+
         if (userService.isNull(user)) {
-//            result.put("state", "error");
             return "false";
         } else {
-//            result.put("state", "success");
             return "true";
         }
 
+
+    }
+
+    @RequestMapping(value = "/user/{id:\\d+}/profile",method = RequestMethod.GET)
+    @ResponseBody
+    public User getUserProfile(@PathVariable Integer id) {
+        User user = userService.findById(id);
+        return user;
+
+    }
+
+
+    @RequestMapping(value = "/user/{id:\\d+}/profile1",method = RequestMethod.GET)
+    @ResponseBody
+    public User getUserProfile1(@PathVariable Integer id) {
+        User user = userService.findById(id);
+        return user;
 
     }
 
